@@ -1,0 +1,133 @@
+@import "./partials/index-html/variables";
+@import "./partials/index-html/navbar";
+@import "./partials/index-html/intro-main";
+@import "./partials/index-html/future-section";
+@import "./partials/index-html/cloud-service-section";
+@import "./partials/index-html/bunner";
+@import "./partials/index-html/our-team-section";
+@import "./partials/index-html/pricing-section";
+@import "./partials/index-html/parallax-text";
+@import "./partials/index-html/latest-section";
+@import "./partials/index-html/footer";
+@import "./partials/about-html/parallax-test-2";
+@import "./partials/about-html/future-section";
+@import "./partials/about-html/mission-section";
+@import "./partials/about-html/vision-section";
+@import "./partials/faq-html/asked-questions-section";
+@import "./partials/feature-html/page-content=section";
+@import "./partials/blog-html/blog";
+@import "./partials/blog-html/standart-post";
+@import "./partials/blog-html/right-side";
+@import "./partials/contact-html/map-section";
+@import "./partials/contact-html/form-section";
+@import "./partials/single-blog-html/single-blog";
+@import "./partials/single-blog-html/popup";
+@import "./partials/login-html/login";
+@import "./partials/login-html/register";
+@import "./partials/index-html/slider";
+@import "./partials/index-html/news";
+@import "./partials/seirler-html/button";
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.scroll-active{
+    display: block !important;
+}
+.active-color{
+    background-color: #00628D;
+}
+.deactive-color{
+    background-color: #f5f5f5;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #f5f5f5;
+    color: $primary-color;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.transparant{
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+
+.scroll-icon{
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-active{
+    display: block !important;
+}
+
+// preloader
+#overlayer{
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    z-index: 99999;
+    background-color: $primary-color;
+    top: 0;
+}
+
+.loader{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    animation: loader 2s infinite ease-in;
+    z-index: 99999;
+}
+
+.loader-inner{
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+ height: 100%;
+}
+
+@keyframes loader{
+
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(180deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+
+    75%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes loader-inner{
+    0%{
+        height: 0;
+    }
+    25%{
+        height: 0;
+    }
+    50%{
+        height: 100%;
+    }
+    
+}

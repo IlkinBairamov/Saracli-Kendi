@@ -1,0 +1,109 @@
+#banner{
+    .col-md-12{
+        position: relative;
+    }
+    .textOnImg{
+        position: absolute;
+        top: 40px;
+        color: white;
+        text-align: center;
+        right: 350px;
+        p{
+            width: 500px;
+        }
+        a{  
+            display: block;
+            width: 100px;
+            height: 30px;
+            background: #00B0FF;
+            border: 1px solid #00B0FF;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white    ;
+            margin-left: 190px;
+            
+        }
+    }   
+}
+
+@media (max-width: 1200px){
+    .textOnImg{
+        position: absolute;
+        top: 40px;
+        color: white;
+        text-align: center;
+        right: 260px !important;
+    }   
+}
+    @media (max-width: 991px){
+        .textOnImg{
+            position: absolute;
+            top: 40px;
+            color: white;
+            text-align: center;
+            right: 125px !important;
+            font-size: 10px;
+        } 
+    
+
+}
+
+@media (max-width: 767px){
+    .textOnImg{
+        position: absolute;
+        top: 40px;
+        color: white;
+        text-align: center;
+        right: 20px !important;
+        font-size: 8px !important;
+    }
+}
+@media (max-width: 414px){
+    .textOnImg{
+        position: absolute;
+        top: 40px;
+        color: white;
+        text-align: center;
+        right: 10px !important;
+        font-size: 5px !important;
+        max-width: 100%;
+
+        a{  
+            display: block;
+            width: 100px;
+            height: 30px;
+            background: #00B0FF;
+            border: 1px solid #00B0FF;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white    ;
+            margin-left: 170px !important;
+            
+        }
+    } 
+}
+
+@media (max-width: 375px){
+    .textOnImg{
+        position: absolute;
+        top: 10px !important;
+        color: white;
+        text-align: center;
+        right: 10px !important;
+        font-size: 5px !important;
+        max-width: 100%;
+
+        a{  
+            display: block;
+            width: 100px;
+            height: 30px;
+            background: #00B0FF;
+            border: 1px solid #00B0FF;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white    ;
+            margin-left: 150px !important;
+            
+        }
+    } 
+}

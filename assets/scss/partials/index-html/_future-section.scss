@@ -1,0 +1,58 @@
+#future{
+    margin: 100px 0px;
+
+    .animate__delay-2{
+        animation-delay: 0.3s;
+    }
+    .animate__delay-3{
+        animation-delay: 0.5s;
+    }
+    .animate__delay-4{
+        animation-delay: 0.7s;
+    }
+    .card-1{
+        text-align: center;
+        padding: 30px;
+        display: inline-block;
+        text-decoration: none;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 48px 0 rgb(236, 231, 231);
+        color: #3B566E;
+        transition: 0.5s;
+        border-radius: 5px; 
+        &:hover{
+            transition: 0.5s;
+            background-color: $primary-color;
+            color: white;
+            text-decoration: none;
+        }
+        .icon{
+            span{
+                display: inline-block;
+                text-align: center;
+                height: 60px;
+                width: 60px;
+                line-height: 60px;
+                border-radius: 50%;
+                background-color: #F7F6FF;
+                color: $primary-color;
+            }
+
+        }
+        .text{
+            h5{
+                font-weight: 400;
+                font-size: 16px;
+                margin-bottom: 15px;
+                letter-spacing: 0.7px;
+            }
+            P{
+                letter-spacing: 0.88px;
+                margin-top: 20px;
+                font-size: 14px;
+                font-weight: 400;
+                color: $secondary-color;
+            }
+        }
+    }
+}
