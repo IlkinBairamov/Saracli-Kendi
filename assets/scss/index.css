@@ -2890,7 +2890,7 @@
   text-decoration: none;
 }
 
-#seirler .col-md-4 .etrafliButton {
+#seirler .etrafliButton {
   border: 1px solid #00B0FF;
   border-radius: 10px;
   width: 100px;
@@ -2898,7 +2898,7 @@
   text-align: center;
 }
 
-#seirler .col-md-4 .etrafliButton:hover {
+#seirler .etrafliButton:hover {
   background-color: #00B0FF;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
