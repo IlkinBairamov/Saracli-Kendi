@@ -2890,7 +2890,7 @@
   text-decoration: none;
 }
 
-#seirler .col-md-12 .col-md-4 div {
+#seirler .col-md-4 .etrafliButton {
   border: 1px solid #00B0FF;
   border-radius: 10px;
   width: 100px;
@@ -2898,16 +2898,11 @@
   text-align: center;
 }
 
-#seirler .col-md-12 .col-md-4 div:hover {
+#seirler .col-md-4 .etrafliButton:hover {
   background-color: #00B0FF;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-}
-
-#seirler .col-md-12 .col-md-4 div:hover a {
   color: white;
-  -webkit-transition: 0.5 ease;
-  transition: 0.5 ease;
 }
 
 * {

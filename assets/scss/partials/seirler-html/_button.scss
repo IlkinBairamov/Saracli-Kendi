@@ -1,8 +1,7 @@
 
 #seirler{
-    .col-md-12{
         .col-md-4{
-            div{
+            .etrafliButton{
                 border: 1px solid #00B0FF;
                 border-radius: 10px;
                 width: 100px;
@@ -11,14 +10,9 @@
                 &:hover{
                     background-color: #00B0FF;
                     transition: 0.5s ease;
-                    a{
-                        color: white;
-                        transition: 0.5 ease;
-                    }
+                    color: white;
                 }
             }
-        }
-      
     }
   
 }
