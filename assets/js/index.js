@@ -19,7 +19,7 @@
 $(document).ready(function(){
     $(".navbar-toggler").click(function(){
         $(".navList").toggle("slow")
-        $(".navList").css({"display":"block","right":"20px","left":"260px"});
+        $(".navList").css({"display":"block","left":"-16px"});
         $(".dropdown-menu").css({"left":"1%","top":"28px"})
       });
 
