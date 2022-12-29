@@ -47,17 +47,23 @@
             transition: all 0.5s;
             transform: translateY(0%);
            
+           
         }
         .dropdown-item{
             font-weight: 400;
             font-size: 14px;
-            color: $secondary-color;
+            color: #00628d;
             line-height: 40px;
             letter-spacing: 1px;
             border: transparent;
             border-bottom: 1px solid #F7F6FF;
             padding-left: 20px;
             margin: 0px;
+            &:hover{
+                background-color: #00628d;
+               color: white;
+               transition: all 0.5s;
+            }
 
             &:active{
                 background-color: unset !important;

@@ -52,13 +52,20 @@
 #navbar .dropdown .dropdown-item {
   font-weight: 400;
   font-size: 14px;
-  color: #6F8BA4;
+  color: #00628d;
   line-height: 40px;
   letter-spacing: 1px;
   border: transparent;
   border-bottom: 1px solid #F7F6FF;
   padding-left: 20px;
   margin: 0px;
+}
+
+#navbar .dropdown .dropdown-item:hover {
+  background-color: #00628d;
+  color: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 #navbar .dropdown .dropdown-item:active {
@@ -528,7 +535,7 @@ html {
 
 body {
   background-color: #f5f5f5;
-  color: #00628D;
+  color: #333333;
   font-family: 'Nunito Sans', sans-serif;
 }
 
