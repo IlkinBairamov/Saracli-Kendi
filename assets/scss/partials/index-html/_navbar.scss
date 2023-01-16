@@ -7,7 +7,6 @@
     z-index: 999;
     transition: all 0.5s;
     font-weight: 700 ; 
-    
    
     .navbar{
         
@@ -25,10 +24,15 @@
     }
 
     .nav-item{
-        padding: 15px 0px;
+        padding: 15px 23px;
     }
 
     .dropdown{
+        .second{
+            a{
+                display: block;
+            }
+        }
         .dropdown-menu{
             display: block;
             opacity: 0;
@@ -48,6 +52,9 @@
             transform: translateY(0%);
            
            
+        }
+        .dropdown-toggle::after{
+            content: none;
         }
         .dropdown-item{
             font-weight: 400;
@@ -85,10 +92,10 @@
             a{
                 font-family: 'Inter';
                 font-style: normal;
-                margin: 0px 20px ;
                 padding: 0px;
                 color: $primary-color;
                 font-weight: 400;
+                display: inline;
             }
         }
     }
@@ -146,6 +153,12 @@
     }
 }
 
+@media screen and (max-width:1200px){
+  .navImg{
+    display: none !important;
+  }
+    
+}
 
 @media screen and (max-width:992px){
     #navbar .dropdown{

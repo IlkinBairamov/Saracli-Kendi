@@ -1,97 +1,25 @@
 #footer{
-    background-color: $primary-color;
-    padding-top: 70px;
-    img{
-        margin-bottom: 30px;
-    }
-    .text{
-        font-weight: 400;
-        font-size: 14px;
-        color: #fff;
-        line-height: 26px;
-        letter-spacing: 0.88px;
-    }
-    h5{
-        font-weight: 400;
-        font-size: 16px;
-        color: #fff;
-        letter-spacing: 0.69px;
-        line-height: 30px;
-        margin-bottom: 30px 
-    }
-    .footer-info{
-        margin: 0px;
-        padding: 0px;
-        li{
-            list-style-type: none;
-
-            a{
-                display: block;
-                text-decoration: none ;
-                i{
-                    float: left;
-                    height: 32px;
-                    line-height: 32px;
-                    margin-right: 12px;
-                    font-size: 14px;
-                    color: #fff;
-                }
-                span{
-                    font-weight: 400;
-                    font-size: 14px;
-                    height: 32px;
-                    line-height: 32px;
-                    color: #FFF7F5;
-                    transition: 0.3s;
-                }
-                &:hover{
-                    span{
-                        padding-left: 8px;
-                        transition: 0.3s;
-                    }
-                }
-            }
-        }
-    }
-
-    .address{
-        p{
-            display: block;
-            font-weight: 400;
-            font-size: 14px;
-            color: #FFF7F5;
-            line-height: 26px;
-            letter-spacing: 0.88px;
-            margin-bottom: 5px;
-            a{
-                color: #FFF7F5;
-            }
-        }
-        .social{
-            margin: 5px 0px 0px 0px;
-            padding: 0px;
+    .col-md-4{
+        margin-top: 40px;
+        ul{
             li{
-                list-style-type: none;
-                display: inline-block;
-                font-size: 16px;
-                margin-right: 5px;
-                
-                a{
-                    color: #FFF7F5;
-                }
+                margin-bottom: 10px;
             }
         }
-        
+        .elage{
+           display: flex;
+           justify-content: center;
+           
+        }
     }
-    .copyright{
-        text-align: center;
-        border-top: 1px solid white;
-        margin-top: 30px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        font-weight: 400;
-        font-size: 14px;
-        color: #FFF7F5;
-        letter-spacing: 0.88px;
-    }
+
+    @media (max-width: 767px){
+        .elage{
+            justify-content: start !important;
+        }
+        .iconlar{
+            justify-content: start !important;
+            align-items: start !important;
+        }
+}
 }

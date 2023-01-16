@@ -26,6 +26,9 @@
 
 
     @media (max-width: 991px){
+        a{
+            height: 100% !important;
+        }
         .textOnImg{
             font-size: 9px;
         } 
@@ -33,6 +36,8 @@
 
     @media (max-width: 767px){
         .textOnImg{
+            top: 35px !important;
+          
           p{
             font-size: 8px;
             width: 515px;

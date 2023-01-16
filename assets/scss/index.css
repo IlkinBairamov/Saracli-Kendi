@@ -22,7 +22,11 @@
 }
 
 #navbar .nav-item {
-  padding: 15px 0px;
+  padding: 15px 23px;
+}
+
+#navbar .dropdown .second a {
+  display: block;
 }
 
 #navbar .dropdown .dropdown-menu {
@@ -47,6 +51,10 @@
   transition: all 0.5s;
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
+}
+
+#navbar .dropdown .dropdown-toggle::after {
+  content: none;
 }
 
 #navbar .dropdown .dropdown-item {
@@ -87,10 +95,10 @@
 #navbar .navList li a {
   font-family: 'Inter';
   font-style: normal;
-  margin: 0px 20px;
   padding: 0px;
   color: #00628D;
   font-weight: 400;
+  display: inline;
 }
 
 #navbar .buttons {
@@ -148,6 +156,12 @@
   color: #00628D;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+@media screen and (max-width: 1200px) {
+  .navImg {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -243,12 +257,18 @@
 }
 
 @media (max-width: 991px) {
+  a {
+    height: 100% !important;
+  }
   .textOnImg {
     font-size: 9px;
   }
 }
 
 @media (max-width: 767px) {
+  .textOnImg {
+    top: 35px !important;
+  }
   .textOnImg p {
     font-size: 8px;
     width: 515px;
@@ -289,111 +309,37 @@
   }
 }
 
-#footer {
-  background-color: #00628D;
-  padding-top: 70px;
+#footer .col-md-4 {
+  margin-top: 40px;
 }
 
-#footer img {
-  margin-bottom: 30px;
+#footer .col-md-4 ul li {
+  margin-bottom: 10px;
 }
 
-#footer .text {
-  font-weight: 400;
-  font-size: 14px;
-  color: #fff;
-  line-height: 26px;
-  letter-spacing: 0.88px;
+#footer .col-md-4 .elage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-#footer h5 {
-  font-weight: 400;
-  font-size: 16px;
-  color: #fff;
-  letter-spacing: 0.69px;
-  line-height: 30px;
-  margin-bottom: 30px;
-}
-
-#footer .footer-info {
-  margin: 0px;
-  padding: 0px;
-}
-
-#footer .footer-info li {
-  list-style-type: none;
-}
-
-#footer .footer-info li a {
-  display: block;
-  text-decoration: none;
-}
-
-#footer .footer-info li a i {
-  float: left;
-  height: 32px;
-  line-height: 32px;
-  margin-right: 12px;
-  font-size: 14px;
-  color: #fff;
-}
-
-#footer .footer-info li a span {
-  font-weight: 400;
-  font-size: 14px;
-  height: 32px;
-  line-height: 32px;
-  color: #FFF7F5;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-#footer .footer-info li a:hover span {
-  padding-left: 8px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-#footer .address p {
-  display: block;
-  font-weight: 400;
-  font-size: 14px;
-  color: #FFF7F5;
-  line-height: 26px;
-  letter-spacing: 0.88px;
-  margin-bottom: 5px;
-}
-
-#footer .address p a {
-  color: #FFF7F5;
-}
-
-#footer .address .social {
-  margin: 5px 0px 0px 0px;
-  padding: 0px;
-}
-
-#footer .address .social li {
-  list-style-type: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-right: 5px;
-}
-
-#footer .address .social li a {
-  color: #FFF7F5;
-}
-
-#footer .copyright {
-  text-align: center;
-  border-top: 1px solid white;
-  margin-top: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-weight: 400;
-  font-size: 14px;
-  color: #FFF7F5;
-  letter-spacing: 0.88px;
+@media (max-width: 767px) {
+  #footer .elage {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: start !important;
+  }
+  #footer .iconlar {
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: start !important;
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: start !important;
+  }
 }
 
 #slider .carousel-indicators li {
@@ -506,6 +452,26 @@
   max-width: 100%;
 }
 
+#fotovideo .leftSide {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#fotovideo .leftSide .col-md-4 .img {
+  width: 90% !important;
+}
+
+#fotovideo .leftSide .col-md-4 p {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#fotovideo .leftSide .img {
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -532,7 +498,7 @@ html {
 body {
   background-color: #f5f5f5;
   color: #333333;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .transparant {
