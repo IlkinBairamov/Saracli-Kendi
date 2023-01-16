@@ -1,4 +1,7 @@
 #footer{
+    .iconlar{
+        margin-bottom: 30px;
+    }
     .col-md-4{
         margin-top: 40px;
         ul{
@@ -9,8 +12,8 @@
         .elage{
            display: flex;
            justify-content: center;
-           
         }
+     
     }
 
     @media (max-width: 767px){
