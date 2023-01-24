@@ -1,0 +1,56 @@
+﻿@model List<PersonModel>
+@{
+    var title = ViewBag.Title;
+    ViewData["Title"] = title;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-3 mb-5 ">
+            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+            <h3 style="display: inline; color: black;">@title</h3>
+        </div>
+        @if (Model.Count > 0)
+        {
+            <div class="col-lg-3 mt-3" id="people-list">
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        <li style="margin-bottom: 5px;">
+                            <a class="person-list-item" data-id="@item.Id">@item.Name @item.Surname</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div id="person-details" class="col-lg-9">
+                @await Html.PartialAsync("_PersonDetailsPartial",Model[0]);
+            </div>
+        } else {
+            <p>Hec bir melumat tapilmadi.</p>
+        }
+        
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $(".person-list-item").click(function (e) {
+                e.preventDefault();
+                console.log("item clicked");
+                var routeId = $(this).attr("data-id")
+                $.ajax({
+                    type: "GET",
+                    url: "/Person/GetPerson",
+                    data: {
+                        id: routeId
+                    },
+                    success: function (res) {
+                        $("#person-details").empty()
+                        $("#person-details").prepend(res)
+                    }
+                })
+            })
+        });
+    </script>
+}

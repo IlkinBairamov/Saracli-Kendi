@@ -1,0 +1,76 @@
+﻿@model FunnyStoryCreateVM
+@{
+    ViewData["Title"] = "Update";
+}
+
+@section Styles{
+    <style>
+        .ck-editor {
+            color: black;
+        }
+    </style>
+ }
+    <div class="row justify-content-center">
+        <div class="col-md-10 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Create Funny Story</h4>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label asp-for="Story.Name">Name</label>
+                            <input class="form-control text-white " asp-for="Story.Name">
+                            <span asp-validation-for="Story.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Story.Content">Content</label>
+                            <textarea class="form-control text-white " asp-for="Story.Content" style="color:black"></textarea>
+                            <span asp-validation-for="Story.Content" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" data-select2-id="7">
+                            <label asp-for="Story.PersonId">Writer</label>
+                            <select asp-for="Story.PersonId" asp-items="@(new SelectList(Model.Writers, nameof(PersonModel.Id), nameof(PersonModel.Name)))" class="js-example-basic-single select2-hidden-accessible" style="width:100%" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                <option>Please select one</option>
+                            </select>
+                            <span asp-validation-for="Story.PersonId" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Submit</button>
+                        <a class="btn btn-dark" asp-action="Index">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Story_Content'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#uploadBtn").click(function myfunction() {
+                $("#uploadImg").click();
+            })
+            $("#uploadImg").change(function (e) {
+                const { files } = e.target
+
+                for (const file of files) {
+                    const fileReader = new FileReader()
+
+                    fileReader.onloadend = function (e) {
+                        const { result } = e.target
+                        $(".imgUploaded").removeClass("d-none")
+                        $(".imgUploaded").attr("src", result);
+                    }
+                    fileReader.readAsDataURL(file)
+                }
+            })
+        });
+
+    </script>
+}
+

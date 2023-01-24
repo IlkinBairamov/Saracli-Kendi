@@ -1,0 +1,31 @@
+﻿@model InformationVM
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="card text-center">
+    <div class="d-flex justify-content-between">
+        <div class="card-body text-start col-7 p-5">
+            @Html.Raw(Model.DescriptionFirstPart)
+        </div>
+    </div>
+    <div class="d-flex">
+        @if(Model.InformationType == InformationType.Location){
+        if(Model.Images.Count > 0){
+            <img class="card-img-top m-auto" src="~/img/information/@Model?.Images?[0]" alt="Card image cap" style="max-width: 400px;">
+        }
+    } else if(Model.InformationType == InformationType.General){
+        foreach (var item in Model.Images)
+        {
+            <img class="card-img-top m-auto" src="~/img/information/@item" alt="Card image cap" style="max-width: 250px;">
+        }
+    }
+    </div>
+    <div class="d-flex justify-content-between">
+        <div class="card-body text-start col-7 p-5">
+            @Html.Raw(Model.DescriptionSecondPart)
+        </div>
+    </div>
+    <a class="btn btn-inverse-warning btn-md" asp-action="Update"  asp-route-id="@Model.Id" asp-route-type="@Model.InformationType" style="width: 10%; margin: auto;">
+        Edit
+    </a>
+</div>

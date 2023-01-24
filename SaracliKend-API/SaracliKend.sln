@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaracliKendApi", "SaracliKendApi\SaracliKendApi.csproj", "{10A955F7-1972-4502-A79E-1CC2D15FCF46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaracliKend.Core", "SaracliKend.Core\SaracliKend.Core.csproj", "{79D9920E-6F3B-4E68-B1AC-C9A80B74AB16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaracliKend.Database", "SaracliKend.Database\SaracliKend.Database.csproj", "{4EBB8133-9EBF-4C54-904B-F56B067206A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaracliKend.Application", "SaracliKend.Application\SaracliKend.Application.csproj", "{E843E234-7C77-4899-8BCA-E68D0F5984CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaracliKend.Domain", "SaracliKend.Domain\SaracliKend.Domain.csproj", "{0224B6C5-AD50-480F-A813-5236A4F8B556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaracliKend.Infrastructure", "SaracliKend.Infrastructure\SaracliKend.Infrastructure.csproj", "{BA1D62AD-3B1F-4F94-8BFB-09B9A5F9F660}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10A955F7-1972-4502-A79E-1CC2D15FCF46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A955F7-1972-4502-A79E-1CC2D15FCF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A955F7-1972-4502-A79E-1CC2D15FCF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A955F7-1972-4502-A79E-1CC2D15FCF46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79D9920E-6F3B-4E68-B1AC-C9A80B74AB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D9920E-6F3B-4E68-B1AC-C9A80B74AB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D9920E-6F3B-4E68-B1AC-C9A80B74AB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D9920E-6F3B-4E68-B1AC-C9A80B74AB16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EBB8133-9EBF-4C54-904B-F56B067206A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EBB8133-9EBF-4C54-904B-F56B067206A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EBB8133-9EBF-4C54-904B-F56B067206A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EBB8133-9EBF-4C54-904B-F56B067206A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E843E234-7C77-4899-8BCA-E68D0F5984CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E843E234-7C77-4899-8BCA-E68D0F5984CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E843E234-7C77-4899-8BCA-E68D0F5984CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E843E234-7C77-4899-8BCA-E68D0F5984CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0224B6C5-AD50-480F-A813-5236A4F8B556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0224B6C5-AD50-480F-A813-5236A4F8B556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0224B6C5-AD50-480F-A813-5236A4F8B556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0224B6C5-AD50-480F-A813-5236A4F8B556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1D62AD-3B1F-4F94-8BFB-09B9A5F9F660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1D62AD-3B1F-4F94-8BFB-09B9A5F9F660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1D62AD-3B1F-4F94-8BFB-09B9A5F9F660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1D62AD-3B1F-4F94-8BFB-09B9A5F9F660}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {360914F5-C95D-493C-8D9A-92B0DB0002F5}
+	EndGlobalSection
+EndGlobal

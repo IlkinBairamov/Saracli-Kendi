@@ -1,0 +1,15 @@
+﻿@model PoetryVM
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card text-center">
+    <h1 class="card-title text-success mt-2">@Model.Name</h1>
+    <h5 class="card-title text-success mt-2">@Model.Writer</h5>
+    <div class="d-flex justify-content-between">
+        <div class="card-body text-center col-7 p-5">
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+</div>
+

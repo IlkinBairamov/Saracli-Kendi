@@ -1,0 +1,42 @@
+﻿@model FileListVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-3" style="margin-bottom: 35px;">
+            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+            <h3 style="display: inline; color: #333333;">@(Model.FileType == SaracliKend.Domain.Enums.FileType.Image ? "Foto" : "Video" )</h3>
+        </div>
+        @if (Model.FileType == SaracliKend.Domain.Enums.FileType.Video)
+        {
+            @for (var i = 0; i < Model.Files.Count; i++)
+            {
+                <div class="col-lg-3 col-md-6 col-xs-12 d-flex" style="flex-direction: column; align-items: center;">
+                    <video class="mb-2" width="261" height="240" src="~/video/@Model.Files[i].Path" controls>
+                    </video>
+                    <p style="text-align: center;">@Model.Files[i].Path</p>
+                </div>
+                if (i + 1 % 4 == 0)
+                {
+                    <hr style="color: #00b0ff;">
+                }
+            }
+        }
+        else if (Model.FileType == SaracliKend.Domain.Enums.FileType.Image){
+            @for (var i = 0; i < Model.Files.Count; i++)
+            {
+                <div class="col-lg-3 col-md-6 col-xs-12 d-flex" style="flex-direction: column; align-items: center;">
+                    <img class="mb-2" style="max-width: 260px; border-radius: 15px; height: 220px;" src="~/img/@Model.Files[i].Path" alt="">
+                    <p>@Model.Files[i].Path</p>
+                </div>
+                if (i + 1 % 4 == 0)
+                {
+                    <hr style="color: #00b0ff;">
+                }
+            }
+        }
+    </div>
+</div>
+

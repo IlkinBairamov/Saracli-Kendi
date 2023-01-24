@@ -1,0 +1,19 @@
+﻿@model FileViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card text-center">
+    @if (Model.FileType == FileType.Image)
+    {
+        <img class="card-img-top m-auto" src="~/img/@Model.Path" alt="Card image cap" style="max-width: 80%;">
+    }
+    else if (Model.FileType == FileType.Video)
+    {
+        <video class="mb-2" style="margin: auto;" src="~/video/@Model.Path" controls>
+        </video>
+    }
+    
+    <h1 class="card-title text-success mt-2">@Model.Path</h1>
+</div>
+

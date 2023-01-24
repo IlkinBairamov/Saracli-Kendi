@@ -1,0 +1,139 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+      <!-- slider -->
+    <div id="slider">
+      <div class="container" style="padding: 0;">
+        <div class="row">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li  data-target="#carouselExampleIndicators" data-slide-to="0" class="active "><div ></div></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1" ><div ></div></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2" ><div ></div></li>
+            </ol>
+            <div class="carousel-inner">
+                @foreach (var item in Model.SliderImages)
+                {
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="~/img/@item.Path" alt="First slide">
+                    </div>
+                }
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              </div>
+            </div>
+           
+        </div>
+      </div>
+    </div>
+    <!-- slider end -->
+
+    <!-- section news and fotos -->
+    <section id="news">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 leftSide">
+            <div class="mb-3">
+              <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="~/img/Ellipse 4.png" alt="">
+              <h3 style="display: inline;">Sexsiyyetler</h3>
+            </div>
+            @if (Model.News.Count > 0)
+            {
+                    for (var i = 0; i < Model.News.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+                            <div class="col-md-12  d-flex">
+                                <div class="col-md-3">
+                                    <img class="img" width="100%" src="~/img/@Model.News[i].Image" alt="sexsiyyetler">
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-8 ">
+                                    <p>@Model.News[i].Content</p>
+                                    <div>
+                                        <a href="#">Etrafli</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-12 mt-3 d-flex">
+                                <div class="col-md-3">
+                                    <img class="img" width="100%" src="~/img/@Model.News[i].Image" alt="sexsiyyetler">
+                                </div>
+                                <div class="col-md-1"></div>
+                                <div class="col-md-8 ">
+                                    <p>@Model.News[i].Content</p>
+                                    <div>
+                                        <a href="#">Etrafli</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+          </div>
+            <div class="col-md 6 leftSide">
+                <div class="mb-4">
+                    <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+                    <h3 style="display: inline; color: #333333;">Şəhidlər</h3>
+                </div>
+                <div class="col-md-12 d-flex">
+                    @if (Model.Martyrs.Count > 0)
+                    {
+                        foreach (var item in Model.Martyrs)
+                        {
+                            <div class="col-md-4">
+                                <img class="img" width="100%" src="~/img/@item.Image" alt="sexsiyyetler">
+                                <p>@item.Name @item.Surname</p>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="mb-4">
+                    <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+                    <h3 style="display: inline; color: #333333;">Qazilər</h3>
+                </div>
+                <div class="col-md-12 d-flex">
+                    @if (Model.Ghazis.Count > 0)
+                    {
+                        foreach (var item in Model.Ghazis)
+                        {
+                            <div class="col-md-4">
+                                <img class="img" width="100%" src="~/img/@item.Image" alt="sexsiyyetler">
+                                <p>@item.Name @item.Surname</p>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- new and fotos section end -->
+    
+    <!-- banner section start -->
+    <section id="banner">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+            <img style="width: 100%;" src="~/img/Rectangle 5.png" alt="">
+            <div class="textOnImg">
+              <h2>Saracli Kendi</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo debitis quia molestiae soluta ea, quisquam eum saepe fugiat minima dolores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa omnis dolor dolorem quod ex sunt commodi explicabo soluta dolores praesentium ducimus, ratione voluptatem debitis architecto qui maiores odio atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, totam necessitatibus voluptate labore possimus dolorem nobis? Eum non harum iste.</p>
+              <a href="#">Etrafli</a>
+            </div>
+          </div>
+      </div>
+    </div>
+    </section>
+    <!-- banner section end -->

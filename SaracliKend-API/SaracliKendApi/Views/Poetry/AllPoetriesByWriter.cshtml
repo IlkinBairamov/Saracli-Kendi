@@ -1,0 +1,29 @@
+﻿@model List<PoetryVM>
+@{
+    ViewData["Title"] = "AllPoetriesByWriter";
+}
+
+<div class="container" style="padding-left: 0;">
+    <div class="row">
+        <div class="col-md-12 mt-3 mb-5 ">
+            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+            <h3 style="display: inline; color: black;">Kend Haqqinda Seirler- @Model[0].Writer</h3>
+        </div>
+        @for (var i = 0; i < Model.Count; i++)
+        {
+            if(i == Model.Count - 1){
+                <div class="col-md-4">
+                    <p style=" text-align: center; font-weight: bold; color: black;" class="mt-3">@Model[i].Name</p>
+                    <p style="color: black; padding: 20px;">@Model[i].Content</p>
+                </div>
+            }
+            else{
+                <div class="col-md-4" style="border-right: 1px solid #00B0FF;">
+                    <p style=" text-align: center; font-weight: bold; color: black;" class="mt-3">@Model[i].Name</p>
+                    <p style="color: black; padding: 20px;">@Model[i].Content</p>
+                </div>
+            }
+        }
+    </div>
+</div>
+

@@ -1,0 +1,11 @@
+﻿@model SaracliKend.Application.Models.PersonModel
+
+    <div class="d-flex mb-3 mt-3">
+        <div class="col-lg-3 sekiller">
+            <img src="~/img/person/@Model.Image" alt="">
+        </div>
+        <div class="col-lg-9">
+            @Model.Name @Model.Surname
+        </div>
+    </div>
+<p>@Html.Raw(Model.Description)</p>
