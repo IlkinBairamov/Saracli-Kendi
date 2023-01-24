@@ -14,13 +14,13 @@ namespace SaracliKendApi.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var funnyStories = await _funnyStoryService.GetAllAsync();
+            var funnyStories = await _funnyStoryService.GetAllAsync("Writer");
             return View(funnyStories);
         }
 
         public async Task<IActionResult> Details(int id)
         {
-            var funnyStory = await _funnyStoryService.GetAsync(id);
+            var funnyStory = await _funnyStoryService.GetAsync(id, "Writer");
             return View(funnyStory);
         }
     }

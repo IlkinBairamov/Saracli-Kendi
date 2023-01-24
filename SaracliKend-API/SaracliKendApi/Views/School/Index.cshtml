@@ -18,10 +18,10 @@
                     {
                         <li style="color: black;">
                             <p>@item.Name</p>
-                            <img style="width: 70%;" src="~/img/@item.Image" alt="">
+                            <img style="width: 70%;" src="~/img/school/@item.Image" alt="">
                             <div class="mt-2">
                                 <p style=" color: black; padding-left: 20px;">Mekteb Haqqinda Melumat</p>
-                                <p style=" color: black; ">@item.Description</p>
+                                <p style=" color: black; ">@Html.Raw(item.Description)</p>
                             </div>
                         </li>
                     }

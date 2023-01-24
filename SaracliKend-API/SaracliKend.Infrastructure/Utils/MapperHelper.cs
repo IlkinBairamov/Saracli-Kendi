@@ -6,8 +6,7 @@ namespace SaracliKend.Infrastructure.Utils
     {
         public static string GetFullname(Person person)
         {
-            var fullName = person.Name + " " + person.Surname;
-            return fullName;
+            return person != null ? person.Name + " " + person.Surname : "";
         }
     }
 }

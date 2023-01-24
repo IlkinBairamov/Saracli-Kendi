@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SaracliKend.Application.Models;
 using SaracliKend.Application.Services.Contracts;
+using SaracliKend.Domain.Enums;
 
 namespace SaracliKendApi.Controllers
 {
@@ -10,28 +11,34 @@ namespace SaracliKendApi.Controllers
         private readonly ISliderImageService _sliderImageService;
         private readonly IPersonService _personService;
         private readonly INewsService _newsService;
+        private readonly IFileService _fileService;
 
-        public HomeController(ILogger<HomeController> logger, ISliderImageService sliderImageService, IPersonService personService, INewsService newsService)
+        public HomeController(ILogger<HomeController> logger, ISliderImageService sliderImageService, IPersonService personService, INewsService newsService, IFileService fileService)
         {
             _logger = logger;
             _sliderImageService = sliderImageService;
             _personService = personService;
             _newsService = newsService;
+            _fileService = fileService;
         }
 
         public async Task<IActionResult> Index()
         {
             var people = await _personService.GetAllAsync();
-            var martyrs = people.FindAll(x => x.Type == SaracliKend.Domain.Enums.PersonType.Martyr);
-            var ghazis = people.FindAll(x => x.Type == SaracliKend.Domain.Enums.PersonType.Ghazi);
+            var martyrs = people.FindAll(x => x.Type == PersonType.Martyr);
+            var ghazis = people.FindAll(x => x.Type == PersonType.Ghazi);
             var news = await _newsService.GetAllAsync();
+            var photos = await _fileService.GetFilesByType(FileType.Image);
+            var videos = await _fileService.GetFilesByType(FileType.Video);
 
             var homeVM = new HomeViewModel
             {
                 SliderImages = await _sliderImageService.GetAllAsync(),
                 Martyrs = martyrs.Count > 0 ? martyrs.GetRange(0, martyrs.Count < 3 ? martyrs.Count : 3) : martyrs,
                 Ghazis = ghazis.Count > 0 ? ghazis.GetRange(0, ghazis.Count < 3 ? ghazis.Count : 3) : ghazis,
-                News = news
+                News = news,
+                Photos = photos.Count > 0 ? photos.GetRange(0, photos.Count < 3 ? photos.Count : 3) : photos,
+                Videos = videos.Count > 0 ? videos.GetRange(0, videos.Count < 3 ? videos.Count : 3) : videos
             };
             return View(homeVM);
         }
