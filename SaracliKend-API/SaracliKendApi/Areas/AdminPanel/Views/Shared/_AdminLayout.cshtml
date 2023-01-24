@@ -62,6 +62,14 @@
                         </div>
                     </div>
                 </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="Dashboard" asp-action="Index">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-speedometer"></i>
+                        </span>
+                        <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
                  <li class="nav-item menu-items">
                     <a class="nav-link" asp-controller="Information" asp-action="Index" asp-route-type="@InformationType.General">
                         <span class="menu-icon">
@@ -79,11 +87,11 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Dashboard" asp-action="Index">
+                    <a class="nav-link" asp-controller="SliderImage" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-speedometer"></i>
                         </span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">Slider</span>
                     </a>
                 </li>
                 <li class="nav-item menu-items">
@@ -140,6 +148,14 @@
                             <i class="mdi mdi-format-list-bulleted"></i>
                         </span>
                         <span class="menu-title">Muellimler</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-controller="Person" asp-action="Index" asp-route-personType="@PersonType.Writer">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-format-list-bulleted"></i>
+                        </span>
+                        <span class="menu-title">Yazarlar</span>
                     </a>
                 </li>
                 <li class="nav-item menu-items">

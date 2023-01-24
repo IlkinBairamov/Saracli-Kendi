@@ -6,7 +6,7 @@ using SaracliKendApi.Areas.AdminPanel.Models;
 
 namespace SaracliKendApi.Areas.AdminPanel.Controllers
 {
-    public class SliderImageController : Controller
+    public class SliderImageController : BaseController
     {
         private readonly ISliderImageService _sliderImageService;
 
@@ -44,7 +44,7 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Create()
         {
-            return View();
+            return View(new SliderImageCreateVM());
         }
 
         [HttpPost]
