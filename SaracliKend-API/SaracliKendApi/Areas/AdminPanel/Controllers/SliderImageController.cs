@@ -42,29 +42,29 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
             return View(file);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            return View(new SliderImageCreateVM());
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(SliderImageCreateVM fileVM)
+        public async Task<IActionResult> Create(SliderImageCreateVM model)
         {
             if (!ModelState.IsValid)
-                return View(fileVM);
+                return View(model);
 
-            if (fileVM.Image != null)
+            if (model.File != null)
             {
-                fileVM.SliderImage.Path = await fileVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "slider"));
+                model.SliderImage.Path = await model.File.GenerateFile(Path.Combine(Constants.ImageFolderPath, "slider"));
             }
             else
             {
                 ModelState.AddModelError("File", "Please select File");
-                return View(fileVM);
+                return View(model);
             }
 
-            await _sliderImageService.CreateAsync(fileVM.SliderImage);
+            await _sliderImageService.CreateAsync(model.SliderImage);
             return RedirectToAction(nameof(Index));
         }
 

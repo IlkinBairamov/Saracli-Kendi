@@ -4,8 +4,8 @@ namespace SaracliKendApi.Areas.AdminPanel.Models
 {
     public class SliderImageCreateVM
     {
-        public SliderViewModel SliderImage { get; set; }
+        public SliderViewModel SliderImage { get; set; } = new SliderViewModel();
 
-        public IFormFile Image { get; set; }
+        public IFormFile File { get; set; }
     }
 }

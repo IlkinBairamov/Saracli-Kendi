@@ -1,4 +1,6 @@
-﻿namespace SaracliKendApi.Areas.AdminPanel.Data
+﻿using SaracliKend.Infrastructure.Resources;
+
+namespace SaracliKendApi.Areas.AdminPanel.Data
 {
     public static class FileExtension
     {
@@ -18,6 +20,7 @@
         }
         public static async Task<string> GenerateFile(this IFormFile file, string folderPath)
         {
+            IsDirectoryExist(folderPath);   
             var fileName = $"{Guid.NewGuid()}-{file.FileName}";
             var path = Path.Combine(folderPath, fileName);
             using (var fileStream = new FileStream(path, FileMode.CreateNew))
@@ -33,6 +36,14 @@
             if (File.Exists(path))
             {
                 File.Delete(path);
+            }
+        }
+
+        private static void IsDirectoryExist(string folderPath)
+        {
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
             }
         }
     }

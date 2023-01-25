@@ -28,7 +28,7 @@
             @for (var i = 0; i < Model.Files.Count; i++)
             {
                 <div class="col-lg-3 col-md-6 col-xs-12 d-flex" style="flex-direction: column; align-items: center;">
-                    <img class="mb-2" style="max-width: 260px; border-radius: 15px; height: 220px;" src="~/img/photo/@Model.Files[i].Path" alt="">
+                    <img class="mb-2" style="max-width: 260px; border-radius: 15px; height: 220px;" src="~/img/@Model.Files[i].Path" alt="">
                     <p>@Model.Files[i].Path</p>
                 </div>
                 if (i + 1 % 4 == 0)

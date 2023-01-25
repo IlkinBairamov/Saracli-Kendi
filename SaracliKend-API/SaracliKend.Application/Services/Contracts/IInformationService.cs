@@ -8,5 +8,7 @@ namespace SaracliKend.Application.Services.Contracts
         Task<InformationVM> GetInformation(InformationType informationType);
 
         Task UpdateInformation(InformationVM model);
+
+        Task CreateInformation(InformationVM model);
     }
 }

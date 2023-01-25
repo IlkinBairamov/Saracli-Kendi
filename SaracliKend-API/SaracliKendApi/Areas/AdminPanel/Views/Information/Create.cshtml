@@ -1,0 +1,96 @@
+﻿@model InformationCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Styles{
+    <style>
+        .ck-editor {
+            color: black;
+        }
+    </style>
+ }
+<div class="row justify-content-center">
+    <div class="col-md-10 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Blog</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="hidden" class="form-control text-white " asp-for="Type" value="@ViewBag.Type">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Information.DescriptionFirstPart">Description First Part</label>
+                        <textarea class="form-control text-white " asp-for="Information.DescriptionFirstPart" style="color:black"></textarea>
+                        <span asp-validation-for="Information.DescriptionFirstPart" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Information.DescriptionSecondPart">Description Second Part</label>
+                        <textarea class="form-control text-white " asp-for="Information.DescriptionSecondPart" style="color:black"></textarea>
+                        <span asp-validation-for="Information.DescriptionSecondPart" class="text-danger"></span>
+                    </div>
+                    @if (ViewBag.Type == InformationType.Location)
+                    {
+                        <div class="form-group">
+                            <input asp-for="Image" type="hidden">
+                            <input asp-for="Image" type="file" class="file-upload-default " id="uploadImg">
+                            <div class="input-group col-xs-12">
+                                <button class="file-upload-browse btn btn-primary" type="button" id="uploadBtn">Upload Photo</button>
+                            </div>
+                            <span asp-validation-for="Image" class="text-danger"></span>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <input asp-for="Images" type="hidden">
+                            <input asp-for="Images" type="file" id="uploadImg" multiple>
+                            <span asp-validation-for="Images" class="text-danger"></span>
+                        </div>
+                    }
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <a class="btn btn-dark" asp-action="Index">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Information_DescriptionFirstPart'))
+            .catch(error => {
+                console.error(error);
+            });
+        ClassicEditor
+            .create(document.querySelector('#Information_DescriptionSecondPart'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#uploadBtn").click(function myfunction() {
+                $("#uploadImg").click();
+            })
+            $("#uploadImg").change(function (e) {
+                const { files } = e.target
+
+                for (const file of files) {
+                    const fileReader = new FileReader()
+
+                    fileReader.onloadend = function (e) {
+                        const { result } = e.target
+                        $(".imgUploaded").removeClass("d-none")
+                        $(".imgUploaded").attr("src", result);
+                    }
+                    fileReader.readAsDataURL(file)
+                }
+            })
+        });
+
+    </script>
+}
+

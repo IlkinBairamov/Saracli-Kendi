@@ -27,6 +27,32 @@ namespace SaracliKend.Application.Services
 
             entity.Images = new List<InformationImage>();
 
+            if (model.InformationType == InformationType.Location && model.Images.Count > 0)
+            {
+                var newInformationImage = new InformationImage { InformationId = model.Id, Path = model.Images[0] };
+                entity.Images.Add(newInformationImage);
+            }
+
+            if (model.InformationType == InformationType.General)
+            {
+                foreach (var image in model.Images)
+                {
+                    entity.Images.Add(new InformationImage { InformationId = model.Id, Path = image });
+                }
+            }
+
+            if(model?.Images?.Count > 0)
+                await EntityDal.RemoveImages(entity);
+            else
+                await EntityDal.UpdateAsync(entity);
+        }
+
+        public async Task CreateInformation(InformationVM model)
+        {
+            var entity = Mapper.Map<Information>(model);
+
+            entity.Images = new List<InformationImage>();
+
             if (model.InformationType == InformationType.Location)
             {
                 var newInformationImage = new InformationImage { InformationId = model.Id, Path = model.Images[0] };
@@ -41,7 +67,7 @@ namespace SaracliKend.Application.Services
                 }
             }
 
-            await EntityDal.RemoveImages(entity);
+            await EntityDal.CreateAsync(entity);
         }
     }
 }
