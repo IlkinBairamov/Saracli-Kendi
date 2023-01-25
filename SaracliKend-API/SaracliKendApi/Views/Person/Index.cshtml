@@ -1,6 +1,7 @@
 ﻿@model List<PersonModel>
 @{
     var title = ViewBag.Title;
+    PersonModel person = ViewBag.Person;
     ViewData["Title"] = title;
 }
 
@@ -23,7 +24,7 @@
                 </ul>
             </div>
             <div id="person-details" class="col-lg-9">
-                @await Html.PartialAsync("_PersonDetailsPartial",Model[0]);
+                @await Html.PartialAsync("_PersonDetailsPartial",person);
             </div>
         } else {
             <p>Hec bir melumat tapilmadi.</p>

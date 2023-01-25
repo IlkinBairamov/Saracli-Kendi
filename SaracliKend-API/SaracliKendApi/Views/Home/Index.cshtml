@@ -111,7 +111,7 @@
                                 <div>
                                     <img class="img" width="100%" src="~/img/person/@item.Image" alt="sexsiyyetler">
                                 </div>
-                                <a style="color: #333333; text-decoration: none;">@item.Name @item.Surname</a>
+                                <a asp-controller="Person" asp-action="Index" asp-route-personType="@PersonType.Martyr" asp-route-id="@item.Id" style="color: #333333; text-decoration: none;">@item.Name @item.Surname</a>
                             </div>
                         }
                     }
@@ -129,7 +129,7 @@
                                 <div>
                                     <img class="img" width="100%" src="~/img/person/@item.Image" alt="sexsiyyetler">
                                 </div>
-                                <a style="color: #333333; text-decoration: none;">@item.Name @item.Surname</a>
+                                <a asp-controller="Person" asp-action="Index" asp-route-personType="@PersonType.Ghazi" asp-route-id="@item.Id" style="color: #333333; text-decoration: none;">@item.Name @item.Surname</a>
                             </div>
                         }
                     }

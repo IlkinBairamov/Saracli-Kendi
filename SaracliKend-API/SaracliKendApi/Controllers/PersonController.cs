@@ -14,10 +14,20 @@ namespace SaracliKendApi.Controllers
             _personService = personService;
         }
 
-        public async Task<IActionResult> Index(PersonType personType)
+        public async Task<IActionResult> Index(PersonType personType, int? id)
         {
             var people = await _personService.GetByType(personType);
             ViewBag.Title = EnumHelper.GetDescription(personType);
+            if (id.HasValue)
+            {
+                var person = await _personService.GetAsync(id.Value);
+                ViewBag.Person = person;
+            }
+            else
+            {
+                ViewBag.Person = people.FirstOrDefault();
+            }
+
             return View(people);
         }
 
