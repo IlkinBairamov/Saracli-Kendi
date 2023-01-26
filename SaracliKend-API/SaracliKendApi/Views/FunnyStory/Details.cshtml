@@ -6,12 +6,12 @@
 <div class="container" style="padding-left: 0;">
     <div class="row">
         <div class="col-md-12 mt-3 mb-5 ">
-            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="~/img/Ellipse 4.png" alt="">
             <h3 style="display: inline; color: black;">@Model.Name</h3>
         </div>
         <div class="col-md-12">
             <p style="margin-left: 20px; font-weight: bold; color: black;" class="mt-3">Yazar-@Model.Writer</p>
-                @Html.Raw(Model.Content)
+            <div style="overflow-wrap:anywhere; padding:20px">@Html.Raw(Model.Content)</div>
         </div>
         <hr style="color: #00B0FF;" class="mt-3">
     </div>

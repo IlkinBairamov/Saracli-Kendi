@@ -6,7 +6,7 @@
 <div class="container" id="seirler">
     <div class="row">
         <div class="col-md-12 mt-3" style="margin-bottom: 20px;">
-            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="~/img/Ellipse 4.png" alt="">
             <h3 style="display: inline; ">Xəbərlər</h3>
         </div>
         @if (Model.Count > 0)
@@ -14,10 +14,10 @@
             @foreach (var item in Model)
             {
                 <div class="col-md-2">
-                    <img style="max-width: 100%;" src="~/img/news/@item.Image" alt="">
+                    <img style="max-width: 100%; height:159px;" src="~/img/news/@item.Image" alt="">
                 </div>
                 <div class="col-md-10" style="display: flex;flex-direction: column;justify-content: space-between; height: 159px; background-color: white; border-radius: 10px; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
-                   <div style="max-height: 100px; overflow: hidden;">
+                    <div style="overflow-wrap:anywhere;">
                         @Html.Raw(item.Content)
                    </div>
                     <div class="d-flex justify-content-end" style="margin-bottom: 10px;">

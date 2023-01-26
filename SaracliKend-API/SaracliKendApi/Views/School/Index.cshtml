@@ -6,7 +6,7 @@
 <div class="container" style="padding-left: 0;">
     <div class="row">
         <div class="col-md-12 mt-3 mb-5 ">
-            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+            <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="~/img/Ellipse 4.png" alt="">
             <h3 style="display: inline; color: black;">Mekteb Haqqinda</h3>
         </div>
         @if (Model.Count > 0)
@@ -18,7 +18,7 @@
                     {
                         <li style="color: black;">
                             <p>@item.Name</p>
-                            <img style="width: 70%;" src="~/img/school/@item.Image" alt="">
+                            <div style="display:flex; justify-content:center"><img style="width: 70%;" src="~/img/school/@item.Image" alt=""></div>
                             <div class="mt-2">
                                 <p style=" color: black; padding-left: 20px;">Mekteb Haqqinda Melumat</p>
                                 <p style=" color: black; ">@Html.Raw(item.Description)</p>

@@ -60,13 +60,13 @@
                     {
                         if (i == 0)
                         {
-                            <div class="col-md-12  d-flex">
+                            <div class="col-md-12 row  d-flex">
                                 <div class="col-md-3 image-holder">
                                     <img class="img" width="100%" src="~/img/news/@Model.News[i].Image" alt="sexsiyyetler">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="multiline">
-                                        <div style="margin-bottom:25px; " class="ellipsis">
+                                        <div style="margin-bottom:25px; overflow-wrap:anywhere " class="ellipsis">
                                         @Html.Raw(Model.News[i].Content)
                                     </div>
                                     </div>
@@ -78,13 +78,13 @@
                         }
                         else
                         {
-                            <div class="col-md-12 mt-3 d-flex">
+                            <div class="col-md-12 row mt-3 d-flex">
                                 <div class="col-md-3 image-holder">
                                     <img class="img" width="100%" src="~/img/news/@Model.News[i].Image" alt="sexsiyyetler">
                                 </div>
                                  <div class="col-md-8">
                                     <div class="multiline">
-                                        <div style="margin-bottom:25px; " class="ellipsis">
+                                        <div style="margin-bottom:25px; overflow-wrap:anywhere " class="ellipsis">
                                         @Html.Raw(Model.News[i].Content)
                                     </div>
                                     </div>
@@ -97,9 +97,9 @@
                     }
                 }
           </div>
-            <div class="col-md 6 leftSide">
+            <div class="col-md-6 leftSide">
                 <div class="mb-4">
-                    <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+                    <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="~/img/Ellipse 4.png" alt="">
                     <h3 style="display: inline; color: #333333;">Şəhidlər</h3>
                 </div>
                 <div class="col-md-12 d-flex">
@@ -107,7 +107,7 @@
                     {
                         foreach (var item in Model.Martyrs)
                         {
-                            <div class="col-md-4">
+                            <div class="col-md-4" style="text-align:center">
                                 <div>
                                     <img class="img" width="100%" src="~/img/person/@item.Image" alt="sexsiyyetler">
                                 </div>
@@ -117,7 +117,7 @@
                     }
                 </div>
                 <div class="mb-4">
-                    <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="./assets/img/Ellipse 4.png" alt="">
+                    <img style="margin-left:5px; margin-right:10px; margin-bottom: 5px;" src="~/img/Ellipse 4.png" alt="">
                     <h3 style="display: inline; color: #333333;">Qazilər</h3>
                 </div>
                 <div class="col-md-12 d-flex">
@@ -125,7 +125,7 @@
                     {
                         foreach (var item in Model.Ghazis)
                         {
-                            <div class="col-md-4">
+                            <div class="col-md-4" style="text-align:center">
                                 <div>
                                     <img class="img" width="100%" src="~/img/person/@item.Image" alt="sexsiyyetler">
                                 </div>
@@ -169,7 +169,7 @@
                     @foreach (var photo in Model.Photos)
                     {
                         <div class="col-md-4">
-                            <img class="img" width="100%" src="~/img/@photo.Path" alt="sexsiyyetler">
+                            <img class="img" width="100%" style="height:142px" src="~/img/@photo.Path" alt="sexsiyyetler">
                         </div>
                     }
                 </div>
@@ -184,7 +184,7 @@
                     @foreach (var video in Model.Videos)
                     {
                         <div class="col-md-4">
-                            <video class="mb-2" width="150" height="130" src="~/video/@video.Path" controls>
+                            <video class="mb-2" width="150" style="height:142px" src="~/video/@video.Path" controls>
                             </video>
                         </div>
                     }
