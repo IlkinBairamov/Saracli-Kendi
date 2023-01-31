@@ -249,6 +249,9 @@
     top: 85px;
     color: white;
     text-align: center;
+    width: 670px;
+    left: 220px;
+    overflow-wrap: anywhere;
 }
 
     #banner .textOnImg a {
@@ -260,6 +263,7 @@
         border-radius: 10px;
         text-decoration: none;
         color: white;
+
     }
 
 @media (max-width: 991px) {
