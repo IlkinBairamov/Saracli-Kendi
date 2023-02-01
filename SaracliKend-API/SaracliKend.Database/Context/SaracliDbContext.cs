@@ -22,6 +22,7 @@ public class SaracliDbContext : IdentityDbContext<User>
     public DbSet<InformationImage>? InformationImages { get; set; }
     public DbSet<File>? Files { get; set; }
     public DbSet<News>? News { get; set; }
+    public DbSet<Footer>? Footers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -37,6 +38,7 @@ public class SaracliDbContext : IdentityDbContext<User>
         builder.Entity<InformationImage>().HasKey(m => m.Id);
         builder.Entity<File>().HasKey(m => m.Id);
         builder.Entity<News>().HasKey(m => m.Id);
+        builder.Entity<Footer>().HasKey(m => m.Id);
 
         base.OnModelCreating(builder);
     }
