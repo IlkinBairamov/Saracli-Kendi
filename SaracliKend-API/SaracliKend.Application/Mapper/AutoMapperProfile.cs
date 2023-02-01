@@ -34,5 +34,7 @@ public class AutoMapperProfile : Profile
 		CreateMap<Poetry, PoetryVM>()
 			.ForMember(x => x.Writer, y => y.MapFrom(z => MapperHelper.GetFullname(z.Writer)))
 			.ReverseMap();
+
+		CreateMap<Footer, FooterVM>().ReverseMap();
 	}
 }
