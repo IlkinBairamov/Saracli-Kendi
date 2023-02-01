@@ -14,4 +14,6 @@ public class HomeViewModel
 
     public List<FileViewModel> Videos { get; set; }
 
+    public InformationVM Information { get; set; }
+
 }
