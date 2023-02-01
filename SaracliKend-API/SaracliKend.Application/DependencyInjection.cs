@@ -17,6 +17,7 @@ public static class DependencyInjection
         services.AddScoped<IInformationService, InformationService>();
         services.AddScoped<INewsService, NewsService>();
         services.AddScoped<IFileService, FileService>();
+        services.AddScoped<IFooterService, FooterService>();
 
         return services;
     }
