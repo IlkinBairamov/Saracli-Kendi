@@ -1,0 +1,36 @@
+﻿@model FooterVM
+
+<footer id="footer">
+    <div class="div" style="background-color: #333333; margin-top: 50px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p style="color: white;">Haqqında</p>
+                    <p style="color: white;">@Model?.About</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="elage">
+
+                        <ul style="padding-left: 0;">
+                            <li>
+                                <p style="color: white;">Əlaqə</p>
+                            </li>
+                            <li>
+                                <img src="~/img/Vector (9).png" alt="">
+                                <p style="color: white; display: inline;">@Model?.PhoneNumebr</p>
+                            </li>
+                            <li>
+                                <img src="~/img/Vector (10).png" alt="">
+                                <p style="color: white; display: inline;">@Model?.Email</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 iconlar d-flex justify-content-center align-items-center">
+                    <a style="margin-right:10px" href="@Model?.FacebookUrl"><img src="~/img/Vector (7).png" alt="facebook"></a>
+                    <a href="@Model?.InstagramUrl"><img src="~/img/Vector (8).png" alt="instagram"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

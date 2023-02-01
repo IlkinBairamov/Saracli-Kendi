@@ -116,40 +116,7 @@
             @RenderBody()
         </main>
 
-    <footer id="footer">
-        <div class="div" style="background-color: #333333; margin-top: 50px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <p style="color: white;">Haqqında</p>
-                        <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laboriosam blanditiis est sequi esse repellend</p>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="elage">
-
-                            <ul style="padding-left: 0;">
-                                <li>
-                                    <p style="color: white;">Əlaqə</p>
-                                </li>
-                                <li>
-                                    <img src="~/img/Vector (9).png" alt="">
-                                    <p style="color: white; display: inline;">+994505005050</p>
-                                </li>
-                                <li>
-                                    <img src="~/img/Vector (10).png" alt="">
-                                    <p style="color: white; display: inline;">saraclıkənd@mail.ru</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4 iconlar d-flex justify-content-center align-items-center">
-                        <a style="margin-right:10px" href="facebook.com"><img src="~/img/Vector (7).png" alt="facebook"></a>
-                        <a href="instagram.com"><img src="~/img/Vector (8).png" alt="instagram"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @await Component.InvokeAsync("Footer")
 
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
