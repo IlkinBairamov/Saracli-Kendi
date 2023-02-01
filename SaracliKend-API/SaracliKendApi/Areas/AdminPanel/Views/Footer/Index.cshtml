@@ -1,0 +1,46 @@
+﻿@model FooterVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if(Model != null){
+<div class="card text-center">
+    <div class="d-flex justify-content-between">
+        <div class="card-body text-start col-7 p-5">
+            <h5>Haqqinda</h5>
+            <p class="card-text text-secondary">@Model?.About</p>
+            <p class="card-text text-secondary"><span class="text-success">E-mail</span> @Model?.Email</p>
+            <p class="card-text text-secondary"><span class="text-success">Phone:</span> @Model?.PhoneNumebr</p>
+        </div>
+        <div class="card-body text-center col-4">
+            <h4 class="text-warning">Social Media</h4>
+            <ul class="list-group list-group-flush card-body">
+                <li class="list-group-item bg-warning rounded mb-3 d-flex justify-content-evenly">
+                    <img src="~/img/Vector (7).png" alt="facebook">
+                    <span class="text-capitalize">@Model?.FacebookUrl</span>
+                    </li>
+                <li class="list-group-item bg-warning rounded mb-3 d-flex justify-content-evenly">
+                    <img src="~/img/Vector (8).png" alt="instagram">
+                    <span class="text-capitalize">@Model?.InstagramUrl</span>
+                    </li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="p-4">
+        <a class="btn btn-inverse-warning btn-md" asp-action="Update" asp-route-id="@Model.Id">
+            Edit
+        </a>
+    </div>
+</div>
+} else {
+     <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Footer</h4>
+    <p class="card-description">
+        Add Footer
+        <a class="btn btn-danger btn-rounded btn-sm ms-2" asp-action="Create">+</a>
+    </p>
+        </div>
+     </div>
+}
