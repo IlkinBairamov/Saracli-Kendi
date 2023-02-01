@@ -13,9 +13,9 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Teachers</h4>
+                <h4 class="card-title">@EnumHelper.GetDescription(Model.Type)</h4>
             <p class="card-description">
-                Add New Teacher
+                Add New @EnumHelper.GetDescription(Model.Type)
                 <a class="btn btn-danger btn-rounded btn-sm ms-2" asp-action="Create" asp-route-personType="@Model.Type">+</a>
             </p>
             <div class="table-responsive">
