@@ -1,9 +1,9 @@
-using SaracliKend.Database.Repositories.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SaracliKend.Core.Repositories;
 using SaracliKend.Database.Context;
 using SaracliKend.Database.Repositoires.EntityFrameworkCore;
+using SaracliKend.Database.Repositories.EntityFrameworkCore;
 
 namespace SaracliKend.Database;
 
@@ -33,6 +33,7 @@ public static class DependencyInjection
         services.AddScoped<IInformationRepository, EFInformationRepository>();
         services.AddScoped<INewsRepository, EFNewsRepository>();
         services.AddScoped<IFileRepository, EFFileRepository>();
+        services.AddScoped<IFooterRepository, EFFooterRepository>();
 
         return services;
     }
