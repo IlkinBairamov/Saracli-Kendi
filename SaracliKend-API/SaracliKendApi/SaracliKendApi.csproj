@@ -25,5 +25,7 @@
      <Folder Include="wwwroot\img\news\" />
      <Folder Include="wwwroot\video\" />
    </ItemGroup>
+
+   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 	
 </Project>
