@@ -12,10 +12,10 @@ namespace SaracliKend.Application.Models
         public string PhoneNumebr { get; set; } = string.Empty;
 
         [DataType(DataType.EmailAddress)]
-        public string Email { get; set; } = string.Empty;
+        public string? Email { get; set; }
 
-        public string FacebookUrl { get; set; } = string.Empty;
+        public string? FacebookUrl { get; set; }
 
-        public string InstagramUrl { get; set; } = string.Empty;
+        public string? InstagramUrl { get; set; }
     }
 }

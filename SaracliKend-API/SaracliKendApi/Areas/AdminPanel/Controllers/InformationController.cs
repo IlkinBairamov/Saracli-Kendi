@@ -79,10 +79,6 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
                         var test = await item.GenerateFile(path);
                         infoVM.Information.Images.Add(test);
                     }
-                    foreach (var item in existInfo.Images)
-                    {
-                        FileExtension.DeleteFile(item, Path.Combine(Constants.ImageFolderPath, "information"));
-                    }
                 }
             }
 

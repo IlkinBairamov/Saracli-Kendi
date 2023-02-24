@@ -6,6 +6,6 @@ namespace SaracliKendApi.Areas.AdminPanel.Models
     {
         public SchoolModel School { get; set; }
 
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
     }
 }

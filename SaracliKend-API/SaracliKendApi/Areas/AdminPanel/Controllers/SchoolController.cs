@@ -63,12 +63,6 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
 
                 schoolVM.School.Image = await schoolVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "school"));
             }
-            else
-            {
-                ModelState.AddModelError("Photo", "Please select Photo");
-                return View(schoolVM);
-            }
-
             await _schoolService.CreateAsync(schoolVM.School);
             return RedirectToAction(nameof(Index));
         }

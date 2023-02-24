@@ -10,5 +10,5 @@ public class Legend : IEntity
 
     public string Content { get; set; } = string.Empty;
 
-    public string Image { get; set; } = string.Empty;
+    public string? Image { get; set; } = string.Empty;
 }

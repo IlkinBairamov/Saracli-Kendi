@@ -10,5 +10,5 @@ public class PoetryVM
 
     public string? Writer { get; set; }
 
-    public int PersonId { get; set; }
+    public int? PersonId { get; set; }
 }

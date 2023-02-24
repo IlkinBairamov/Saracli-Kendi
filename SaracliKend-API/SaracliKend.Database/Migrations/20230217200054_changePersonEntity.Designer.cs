@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SaracliKend.Database.Context;
 
@@ -11,9 +12,10 @@ using SaracliKend.Database.Context;
 namespace SaracliKend.Database.Migrations
 {
     [DbContext(typeof(SaracliDbContext))]
-    partial class SaracliDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230217200054_changePersonEntity")]
+    partial class changePersonEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -192,9 +194,11 @@ namespace SaracliKend.Database.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FacebookUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InstagramUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumebr")
@@ -291,6 +295,7 @@ namespace SaracliKend.Database.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -340,6 +345,7 @@ namespace SaracliKend.Database.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -417,6 +423,7 @@ namespace SaracliKend.Database.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

@@ -78,11 +78,6 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
                 }
                 personVM.Person.Image = await personVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "person"));
             }
-            else
-            {
-                ModelState.AddModelError("Photo", "Please select Photo");
-                return View(personVM);
-            }
 
             await _personService.CreateAsync(personVM.Person);
             return RedirectToAction(nameof(Index), new { personType = personVM.Person.Type });

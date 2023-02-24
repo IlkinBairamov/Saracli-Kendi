@@ -266,19 +266,37 @@
 
     }
 
+@media (min-width: 1200px) {
+    .textOnImg {
+        top: 30% !important;
+        left: 25% !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .textOnImg {
+        left: 11% !important;
+    }
+}
+
 @media (max-width: 991px) {
+
     a {
         height: 100% !important;
     }
 
     .textOnImg {
         font-size: 9px;
+        left: 0px !important;
+        width: 100% !important;
     }
 }
 
 @media (max-width: 767px) {
     .textOnImg {
         top: 35px !important;
+        left: 0px !important;
+        width: 100% !important;
     }
 
         .textOnImg p {
@@ -288,6 +306,11 @@
 }
 
 @media (max-width: 537px) {
+    .textOnImg {
+        left: 0 !important;
+        width: 100% !important
+    }
+
     .textOnImg {
         width: 95%;
         position: absolute;
@@ -302,6 +325,11 @@
 
 @media (max-width: 469px) {
     .textOnImg {
+        left: 0 !important;
+        width: 100% !important
+    }
+
+    .textOnImg {
         position: absolute;
         top: 10px !important;
     }
@@ -313,15 +341,20 @@
 }
 
 @media (max-width: 414px) {
-    .textOnImg a {
-        height: 15px !important;
-        width: 65px !important;
+    .textOnImg {
+        left: 0 !important;
+        width: 100% !important
     }
 
-    .textOnImg p {
-        font-size: 5px;
-        width: 200px;
-    }
+        .textOnImg a {
+            height: 15px !important;
+            width: 65px !important;
+        }
+
+        .textOnImg p {
+            font-size: 5px;
+            width: 200px;
+        }
 }
 
 #footer .iconlar {

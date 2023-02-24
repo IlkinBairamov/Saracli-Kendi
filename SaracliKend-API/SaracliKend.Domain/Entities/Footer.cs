@@ -12,8 +12,8 @@ namespace SaracliKend.Domain.Entities
 
         public string Email { get; set; } = string.Empty;
 
-        public string FacebookUrl { get; set; } = string.Empty;
+        public string? FacebookUrl { get; set; }
 
-        public string InstagramUrl { get; set; } = string.Empty;
+        public string? InstagramUrl { get; set; }
     }
 }

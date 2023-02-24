@@ -17,6 +17,7 @@
 
    <ItemGroup>
      <ProjectReference Include="..\SaracliKend.Application\SaracliKend.Application.csproj" />
+     <ProjectReference Include="..\SaracliKend.Database\SaracliKend.Database.csproj" />
      <ProjectReference Include="..\SaracliKend.Infrastructure\SaracliKend.Infrastructure.csproj" />
    </ItemGroup>
 

@@ -11,7 +11,7 @@ public class Person : IPerson
 
     public string Surname { get; set; } = string.Empty;
 
-    public string Image { get; set; } = string.Empty;
+    public string? Image { get; set; }
 
     public string Description { get; set; } = string.Empty;
 

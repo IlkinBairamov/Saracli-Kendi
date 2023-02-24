@@ -13,7 +13,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<SaracliDbContext>(options =>
         {
-            options.UseNpgsql(connectionString, builder =>
+            options.UseSqlServer(connectionString, builder =>
             {
                 builder.MigrationsAssembly(typeof(SaracliDbContext).Assembly.FullName);
             });

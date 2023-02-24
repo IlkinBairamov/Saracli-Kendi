@@ -63,11 +63,6 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
 
                 newsVM.News.Image = await newsVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "news"));
             }
-            else
-            {
-                ModelState.AddModelError("Photo", "Please select Photo");
-                return View(newsVM);
-            }
 
             await _newsService.CreateAsync(newsVM.News);
             return RedirectToAction(nameof(Index));

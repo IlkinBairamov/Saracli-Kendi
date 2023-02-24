@@ -63,11 +63,6 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
 
                 storyVM.Legend.Image = await storyVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "legend"));
             }
-            else
-            {
-                ModelState.AddModelError("Photo", "Please select Photo");
-                return View(storyVM);
-            }
 
             await _legendService.CreateAsync(storyVM.Legend);
             return RedirectToAction(nameof(Index));

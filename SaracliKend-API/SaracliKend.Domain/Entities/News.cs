@@ -8,6 +8,6 @@ namespace SaracliKend.Domain.Entities
 
         public string Content { get; set; } = string.Empty;
 
-        public string Image { get; set; }
+        public string? Image { get; set; }
     }
 }
