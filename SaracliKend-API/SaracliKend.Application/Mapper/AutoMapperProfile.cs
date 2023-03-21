@@ -27,9 +27,7 @@ public class AutoMapperProfile : Profile
 			.ReverseMap()
 			.ForMember(x => x.Images, y => y.Ignore());
 
-		CreateMap<FunnyStory, FunnyStoryVM>()
-			.ForMember(x => x.Writer, y => y.MapFrom(z => MapperHelper.GetFullname(z.Writer)))
-			.ReverseMap();
+		CreateMap<FunnyStory, FunnyStoryVM>().ReverseMap();
 
 		CreateMap<Poetry, PoetryVM>()
 			.ForMember(x => x.Writer, y => y.MapFrom(z => MapperHelper.GetFullname(z.Writer)))

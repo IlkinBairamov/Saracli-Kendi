@@ -361,6 +361,10 @@
     margin-bottom: 30px;
 }
 
+#footer .footer-title{
+    font-size: 22px;
+}
+
 #footer .col-md-4 {
     margin-top: 40px;
 }
@@ -502,6 +506,17 @@
                 color: #00B0FF;
                 text-decoration: none;
             }
+
+
+#poetry-content-index{
+    max-height: 255px;
+    overflow: hidden;
+}
+
+#poetry-content p,
+#poetry-content-index p{
+    margin-bottom: unset !important;
+}
 
 #seirler .etrafliButton {
     border: 1px solid #00B0FF;

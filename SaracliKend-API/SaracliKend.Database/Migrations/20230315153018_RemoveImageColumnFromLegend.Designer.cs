@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SaracliKend.Database.Context;
 
@@ -11,9 +12,10 @@ using SaracliKend.Database.Context;
 namespace SaracliKend.Database.Migrations
 {
     [DbContext(typeof(SaracliDbContext))]
-    partial class SaracliDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230315153018_RemoveImageColumnFromLegend")]
+    partial class RemoveImageColumnFromLegend
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -226,7 +228,12 @@ namespace SaracliKend.Database.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
 
                     b.ToTable("FunnyStories");
                 });
@@ -596,6 +603,17 @@ namespace SaracliKend.Database.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("SaracliKend.Domain.Entities.FunnyStory", b =>
+                {
+                    b.HasOne("SaracliKend.Domain.Entities.Person", "Writer")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Writer");
                 });
 
             modelBuilder.Entity("SaracliKend.Domain.Entities.InformationImage", b =>

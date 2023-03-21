@@ -15,7 +15,7 @@
             {
                 <div class="col-md-4">
                     <p style="margin-left: 25px; font-weight: bold; color: black;" class="mt-3">@Model[i].Name</p>
-                    <div style="overflow-wrap:anywhere; padding:20px"> @Html.Raw(@Model[i].Content)</div>
+                    <div id="poetry-content-index" style="overflow-wrap:anywhere; padding:20px"> @Html.Raw(@Model[i].Content)</div>
                     <div class="d-flex justify-content-end">
                         <a style="text-decoration: none;" class="etrafliButton" asp-controller="Poetry" asp-action="AllPoetriesByWriter" asp-route-writerId="@Model[i].PersonId">
                             Ətraflı

@@ -26,19 +26,9 @@ namespace SaracliKend.Application.Services
             var entity = Mapper.Map<Information>(model);
 
             entity.Images = new List<InformationImage>();
-
-            if (model.InformationType == InformationType.Location && model.Images.Count > 0)
+            foreach (var image in model.Images)
             {
-                var newInformationImage = new InformationImage { InformationId = model.Id, Path = model.Images[0] };
-                entity.Images.Add(newInformationImage);
-            }
-
-            if (model.InformationType == InformationType.General)
-            {
-                foreach (var image in model.Images)
-                {
-                    entity.Images.Add(new InformationImage { InformationId = model.Id, Path = image });
-                }
+                entity.Images.Add(new InformationImage { InformationId = model.Id, Path = image });
             }
 
             if(model?.Images?.Count > 0)
@@ -52,19 +42,9 @@ namespace SaracliKend.Application.Services
             var entity = Mapper.Map<Information>(model);
 
             entity.Images = new List<InformationImage>();
-
-            if (model.InformationType == InformationType.Location)
+            foreach (var image in model.Images)
             {
-                var newInformationImage = new InformationImage { InformationId = model.Id, Path = model.Images[0] };
-                entity.Images.Add(newInformationImage);
-            }
-
-            if (model.InformationType == InformationType.General)
-            {
-                foreach (var image in model.Images)
-                {
-                    entity.Images.Add(new InformationImage { InformationId = model.Id, Path = image });
-                }
+                entity.Images.Add(new InformationImage { InformationId = model.Id, Path = image });
             }
 
             await EntityDal.CreateAsync(entity);

@@ -53,17 +53,6 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
             if (!ModelState.IsValid)
                 return View(storyVM);
 
-            if (storyVM.Image != null)
-            {
-                if (!storyVM.Image.IsImage())
-                {
-                    ModelState.AddModelError("Photo", "File must to be a Photo!");
-                    return View(storyVM);
-                }
-
-                storyVM.Legend.Image = await storyVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "legend"));
-            }
-
             await _legendService.CreateAsync(storyVM.Legend);
             return RedirectToAction(nameof(Index));
         }
@@ -89,19 +78,6 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
             var existStory = await _legendService.GetAsync(id);
             if (existStory == null)
                 return NotFound();
-
-            if (storyVM.Image != null)
-            {
-                if (!storyVM.Image.IsImage())
-                {
-                    ModelState.AddModelError("Photo", "File must to be a Photo!");
-                    return View(storyVM);
-                }
-
-                FileExtension.DeleteFile(existStory.Image, Path.Combine(Constants.ImageFolderPath, "legend"));
-
-                storyVM.Legend.Image = await storyVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "legend"));
-            }
 
             storyVM.Legend.Id = id;
             await _legendService.UpdateAsync(storyVM.Legend);

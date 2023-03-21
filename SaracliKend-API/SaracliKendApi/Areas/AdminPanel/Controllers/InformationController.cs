@@ -46,39 +46,27 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
             if (existInfo == null)
                 return NotFound();
             infoVM.Information.Images = new List<string>();
-            if (infoVM.Type == InformationType.Location)
+
+            if (infoVM.Images != null)
             {
-                if (infoVM.Image != null)
+                if (existInfo.Images?.Count > 0)
                 {
-                    if (!infoVM.Image.IsImage())
+                    foreach (var existImage in existInfo.Images)
+                    {
+                        FileExtension.DeleteFile(existImage, Path.Combine(Constants.ImageFolderPath, "information"));
+                    }
+                }
+
+                foreach (var item in infoVM.Images)
+                {
+                    if (!item.IsImage())
                     {
                         ModelState.AddModelError("Photo", "File must to be a Photo!");
                         return View(infoVM);
                     }
-
-                    if (existInfo.Images?.Count > 0)
-                    {
-                        FileExtension.DeleteFile(existInfo.Images[0], Path.Combine(Constants.ImageFolderPath, "information"));
-                    }
-
-                    infoVM.Information.Images.Add(await infoVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "information")));
-                }
-            }
-            else if (infoVM.Type == InformationType.General)
-            {
-                if (infoVM.Images != null)
-                {
-                    foreach (var item in infoVM.Images)
-                    {
-                        if (!item.IsImage())
-                        {
-                            ModelState.AddModelError("Photo", "File must to be a Photo!");
-                            return View(infoVM);
-                        }
-                        var path = Path.Combine(Constants.ImageFolderPath, "information");
-                        var test = await item.GenerateFile(path);
-                        infoVM.Information.Images.Add(test);
-                    }
+                    var path = Path.Combine(Constants.ImageFolderPath, "information");
+                    var test = await item.GenerateFile(path);
+                    infoVM.Information.Images.Add(test);
                 }
             }
 
@@ -102,33 +90,18 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
                 return View(infoVM);
 
             infoVM.Information.Images = new List<string>();
-            if (infoVM.Type == InformationType.Location)
+            if (infoVM.Images != null)
             {
-                if (infoVM.Image != null)
+                foreach (var item in infoVM.Images)
                 {
-                    if (!infoVM.Image.IsImage())
+                    if (!item.IsImage())
                     {
                         ModelState.AddModelError("Photo", "File must to be a Photo!");
                         return View(infoVM);
                     }
-                    infoVM.Information.Images.Add(await infoVM.Image.GenerateFile(Path.Combine(Constants.ImageFolderPath, "information")));
-                }
-            }
-            else if (infoVM.Type == InformationType.General)
-            {
-                if (infoVM.Images != null)
-                {
-                    foreach (var item in infoVM.Images)
-                    {
-                        if (!item.IsImage())
-                        {
-                            ModelState.AddModelError("Photo", "File must to be a Photo!");
-                            return View(infoVM);
-                        }
-                        var path = Path.Combine(Constants.ImageFolderPath, "information");
-                        var test = await item.GenerateFile(path);
-                        infoVM.Information.Images.Add(test);
-                    }
+                    var path = Path.Combine(Constants.ImageFolderPath, "information");
+                    var test = await item.GenerateFile(path);
+                    infoVM.Information.Images.Add(test);
                 }
             }
 

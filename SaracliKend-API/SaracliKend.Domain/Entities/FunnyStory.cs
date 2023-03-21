@@ -9,8 +9,4 @@ public class FunnyStory : IEntity
     public string Name { get; set; } = string.Empty;
 
     public string Content { get; set; } = string.Empty;
-
-    public Person Writer { get; set; }
-
-    public int PersonId { get; set; }
 }

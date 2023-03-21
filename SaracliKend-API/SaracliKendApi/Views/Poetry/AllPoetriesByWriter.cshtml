@@ -14,13 +14,13 @@
             if(i == Model.Count - 1){
                 <div class="col-md-4">
                     <p style=" text-align: center; font-weight: bold; color: black;" class="mt-3">@Model[i].Name</p>
-                    @Html.Raw(@Model[i].Content)
+                    <div id="poetry-content"> @Html.Raw(@Model[i].Content)</div>
                 </div>
             }
             else{
                 <div class="col-md-4" style="border-right: 1px solid #00B0FF;">
                     <p style=" text-align: center; font-weight: bold; color: black;" class="mt-3">@Model[i].Name</p>
-                    @Html.Raw(@Model[i].Content)
+                    <div id="poetry-content"> @Html.Raw(@Model[i].Content)</div>
                 </div>
             }
         }

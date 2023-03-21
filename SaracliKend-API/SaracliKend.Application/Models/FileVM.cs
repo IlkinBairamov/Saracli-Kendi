@@ -8,6 +8,8 @@ namespace SaracliKend.Application.Models
 
         public string Path { get; set; } = string.Empty;
 
+        public string? Name { get; set; }
+
         public FileType FileType { get; set; }
     }
 }

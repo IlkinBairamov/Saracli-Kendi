@@ -20,7 +20,7 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
         {
             if (page < 1)
                 return BadRequest();
-            var stories = await _funnyStoryService.GetAllAsync("Writer");
+            var stories = await _funnyStoryService.GetAllAsync();
 
             var totalPageCount = Math.Ceiling((decimal)stories.Count / 10);
             if (stories.Count != 0 && ((page - 1) * 10) >= stories.Count)
@@ -36,7 +36,7 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var story = await _funnyStoryService.GetAsync(id, "Writer");
+            var story = await _funnyStoryService.GetAsync(id);
             if (story == null)
                 return NotFound();
 
@@ -45,17 +45,13 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Create()
         {
-            return View(new FunnyStoryCreateVM
-            {
-                Writers = await _personService.GetByType(PersonType.Writer)
-            });
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(FunnyStoryCreateVM storyVM)
         {
-            storyVM.Writers = await _personService.GetByType(PersonType.Writer);
             if (!ModelState.IsValid)
                 return View(storyVM);
 
@@ -65,13 +61,13 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
 
         public async Task<IActionResult> Update(int id)
         {
-            var story = await _funnyStoryService.GetAsync(id, "Writer");
+            var story = await _funnyStoryService.GetAsync(id);
             if (story == null)
                 return NotFound();
+
             return View(new FunnyStoryCreateVM
             {
                 Story = story,
-                Writers = await _personService.GetByType(PersonType.Writer)
             });
         }
 
@@ -79,11 +75,10 @@ namespace SaracliKendApi.Areas.AdminPanel.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int id, FunnyStoryCreateVM storyVM)
         {
-            storyVM.Writers = await _personService.GetByType(PersonType.Writer);
             if (!ModelState.IsValid)
                 return View(storyVM);
 
-            var existStory = await _funnyStoryService.GetAsync(id, "Writer");
+            var existStory = await _funnyStoryService.GetAsync(id);
             if (existStory == null)
                 return NotFound();
 
